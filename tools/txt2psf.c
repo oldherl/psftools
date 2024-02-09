@@ -58,12 +58,14 @@ char *cnv_help(void)
 #define INCHAR   2
 #define INBITMAP 3
 
+#define BUFFER_LINE_SIZE 100000
+
 char *cnv_execute(FILE *infile, FILE *outfile)
 {	
 	int rv, n, x = 0, y = 0;
 	int state = 0;	
-	char linebuf[2000];
-	char unibuf[2000];
+	char linebuf[BUFFER_LINE_SIZE];
+	char unibuf[BUFFER_LINE_SIZE];
 	char *c;
 	int version = -1, flags = -1, length = -1, width = -1, height = -1;
 	int nchar = 0;
